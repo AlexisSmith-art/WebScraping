@@ -1,0 +1,11 @@
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\PatioFurniture.exe.config
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\PatioFurniture.exe
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\PatioFurniture.pdb
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.csprojAssemblyReference.cache
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.csproj.CoreCompileInputs.cache
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.exe
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.pdb
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\HtmlAgilityPack.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\HtmlAgilityPack.xml
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.csproj.CopyComplete
