@@ -24,27 +24,34 @@ namespace PatioFurniture
 
                 foreach (var resultRow in resultRows)
                 {
-                    var nameOfItem = resultRow.QuerySelector(".result-title.hdrlnk");
-                    var linkToItem = resultRow.QuerySelectorAll(".result-title.hdrlnk").Select(m => m.GetAttribute("href"));
-                    var cityOfItem = resultRow.QuerySelector(".result-hood");
-                    var distanceToItem = resultRow.QuerySelector(".maptag");
-                    Console.WriteLine($"Name: {nameOfItem.TextContent}");
-                    Console.WriteLine($"Link: {linkToItem.FirstOrDefault()}");
-                    Console.WriteLine($"City: {cityOfItem.TextContent}");
-                    Console.WriteLine($"Distance: {distanceToItem.TextContent}");
+                    var nameOfItem = resultRow.QuerySelector(".result-title.hdrlnk").TextContent;
+                    var linkToItem = resultRow.QuerySelectorAll(".result-title.hdrlnk").Select(m => m.GetAttribute("href")).FirstOrDefault();
+                    var cityOfItem = resultRow.QuerySelector(".result-hood").TextContent;
+                    var distanceToItem = resultRow.QuerySelector(".maptag").TextContent;
+                    Console.WriteLine($"Name: {nameOfItem}");
+                    Console.WriteLine($"Link: {linkToItem}");
+                    Console.WriteLine($"City: {cityOfItem}");
+                    Console.WriteLine($"Distance: {distanceToItem}");
 
-                    linksToItems.Add(linkToItem.FirstOrDefault());
-                }
+                    //linksToItems.Add(linkToItem.FirstOrDefault());
 
-                //get images
-                foreach (string link in linksToItems)
-                {
-                    var linkToItemHtml = webClient.DownloadString(link);
+                    //get images
+                    var linkToItemHtml = webClient.DownloadString(linkToItem);
                     parser = new HtmlParser();
                     document = parser.ParseDocument(linkToItemHtml);
                     var itemImg = document.QuerySelectorAll(".swipe-wrap img").Select(m => m.GetAttribute("src")).FirstOrDefault();
                     Console.WriteLine($"Img: {itemImg}");
                 }
+
+                //get images
+                //foreach (string link in linksToItems)
+                //{
+                //    var linkToItemHtml = webClient.DownloadString(link);
+                //    parser = new HtmlParser();
+                //    document = parser.ParseDocument(linkToItemHtml);
+                //    var itemImg = document.QuerySelectorAll(".swipe-wrap img").Select(m => m.GetAttribute("src")).FirstOrDefault();
+                //    Console.WriteLine($"Img: {itemImg}");
+                //}
             }
             Console.WriteLine("");
         }
