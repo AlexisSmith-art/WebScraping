@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using AngleSharp.Html.Parser;
 using HtmlAgilityPack;
 
 namespace PatioFurniture
@@ -12,25 +14,39 @@ namespace PatioFurniture
     {
         static void Main(string[] args)
         {
-            var webClient = new WebClient();
-            var html = webClient.DownloadString("https://losangeles.craigslist.org/search/zip?query=patio+furniture&search_distance=5&postal=90305");
-
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(html);
-
-            var nodes = htmlDoc
-                .DocumentNode
-                .Descendants()
-                .Where(node =>
-                    node.Attributes["class"] != null &&
-                    node.Attributes["class"].Value.Contains("result-row"));
-
-            foreach (var node in nodes)
+            using (var webClient = new WebClient())
             {
-                Console.WriteLine(node.InnerHtml);
-            }
+                var craigsListHtml = webClient.DownloadString("https://losangeles.craigslist.org/search/zip?sort=date&postal=90305&query=patio%20furniture&search_distance=25");
+                var parser = new HtmlParser();
+                var document = parser.ParseDocument(craigsListHtml);
+                var resultRows = document.QuerySelectorAll(".result-row");
+                List<string> linksToItems = new List<string>();
 
-            Console.WriteLine(html);
+                foreach (var resultRow in resultRows)
+                {
+                    var nameOfItem = resultRow.QuerySelector(".result-title.hdrlnk");
+                    var linkToItem = resultRow.QuerySelectorAll(".result-title.hdrlnk").Select(m => m.GetAttribute("href"));
+                    var cityOfItem = resultRow.QuerySelector(".result-hood");
+                    var distanceToItem = resultRow.QuerySelector(".maptag");
+                    Console.WriteLine($"Name: {nameOfItem.TextContent}");
+                    Console.WriteLine($"Link: {linkToItem.FirstOrDefault()}");
+                    Console.WriteLine($"City: {cityOfItem.TextContent}");
+                    Console.WriteLine($"Distance: {distanceToItem.TextContent}");
+
+                    linksToItems.Add(linkToItem.FirstOrDefault());
+                }
+
+                //get images
+                foreach (string link in linksToItems)
+                {
+                    var linkToItemHtml = webClient.DownloadString(link);
+                    parser = new HtmlParser();
+                    document = parser.ParseDocument(linkToItemHtml);
+                    var itemImg = document.QuerySelectorAll(".swipe-wrap img").Select(m => m.GetAttribute("src")).FirstOrDefault();
+                    Console.WriteLine($"Img: {itemImg}");
+                }
+            }
+            Console.WriteLine("");
         }
     }
 }
