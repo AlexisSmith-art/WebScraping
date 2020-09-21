@@ -33,8 +33,6 @@ namespace PatioFurniture
                     Console.WriteLine($"City: {cityOfItem}");
                     Console.WriteLine($"Distance: {distanceToItem}");
 
-                    //linksToItems.Add(linkToItem.FirstOrDefault());
-
                     //get images
                     var linkToItemHtml = webClient.DownloadString(linkToItem);
                     parser = new HtmlParser();
@@ -42,16 +40,6 @@ namespace PatioFurniture
                     var itemImg = document.QuerySelectorAll(".swipe-wrap img").Select(m => m.GetAttribute("src")).FirstOrDefault();
                     Console.WriteLine($"Img: {itemImg}");
                 }
-
-                //get images
-                //foreach (string link in linksToItems)
-                //{
-                //    var linkToItemHtml = webClient.DownloadString(link);
-                //    parser = new HtmlParser();
-                //    document = parser.ParseDocument(linkToItemHtml);
-                //    var itemImg = document.QuerySelectorAll(".swipe-wrap img").Select(m => m.GetAttribute("src")).FirstOrDefault();
-                //    Console.WriteLine($"Img: {itemImg}");
-                //}
             }
             Console.WriteLine("");
         }
