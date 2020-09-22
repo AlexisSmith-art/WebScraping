@@ -111,3 +111,12 @@ C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\D
 C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\AngleSharp.xml
 C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\obj\Debug\PatioFurniture.exe.config
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Twilio.dll
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Newtonsoft.Json.xml
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\bubbaliciousish\Desktop\WebScraping\PatioFurniture\PatioFurniture\bin\Debug\Twilio.xml
