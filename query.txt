@@ -1,0 +1,5 @@
+How to use:
+
+1. Run on the command line this command "python query.py {string}" where string is the url.
+2. If the url is in the database, it will return true and print into the console: "Already in database!"
+3. Otherwise, it will return false, insert the url into the database, and print: "Not in database!"
